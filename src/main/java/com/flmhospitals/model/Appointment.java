@@ -3,8 +3,12 @@ package com.flmhospitals.model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import com.flmhospitals.utilis.AppointmentIdGenerator;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,5 +39,13 @@ public class Appointment {
 	private String status;
 	
 	private String notes;
-}
+	
+	public void assignAppointmentId() {
+		if(appointmentId==null) {
+			appointmentId=AppointmentIdGenerator.generateAppointmentId();
+		}
+	}
+
+} 
+  
 
