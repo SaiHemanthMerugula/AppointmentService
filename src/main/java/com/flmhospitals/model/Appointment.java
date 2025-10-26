@@ -40,6 +40,7 @@ public class Appointment {
 	
 	private String notes;
 	
+	@PrePersist
 	public void assignAppointmentId() {
 		if(appointmentId==null) {
 			appointmentId=AppointmentIdGenerator.generateAppointmentId();
