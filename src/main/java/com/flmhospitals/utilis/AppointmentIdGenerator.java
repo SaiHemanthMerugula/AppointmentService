@@ -10,7 +10,7 @@ public class AppointmentIdGenerator {
 
 	public static  String generateAppointmentId() {
 		
-		String pattern=("YYYYMMDDMMSS");
+		String pattern=("YYYYMMDDHHMMSS");
 		
 		SimpleDateFormat sdf=new SimpleDateFormat(pattern);
 		
