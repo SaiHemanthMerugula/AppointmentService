@@ -41,8 +41,8 @@ public class Appointment {
 	
 	@PrePersist
 	public void assignAppointmentId() {
-		if(appointmentId==null) {
-			appointmentId=AppointmentIdGenerator.generateAppointmentId();
+		if(this.appointmentId==null || this.appointmentId.isEmpty()) {
+			this.appointmentId=AppointmentIdGenerator.generateAppointmentId();
 		}
 	}
 

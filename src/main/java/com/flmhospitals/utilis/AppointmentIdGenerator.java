@@ -8,14 +8,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class AppointmentIdGenerator {
 
-	public static  String generateAppointmentId() {
-		
-		String pattern=("YYYYMMDDHHMMSS");
-		
-		SimpleDateFormat sdf=new SimpleDateFormat(pattern);
-		
+	public static String generateAppointmentId() {
+
+		String pattern = ("YYYYMMDDHHMMSS");
+
+		SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+
 		String format = sdf.format(new Date());
-		
+
 		return format;
 	}
 
