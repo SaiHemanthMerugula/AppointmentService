@@ -14,6 +14,6 @@ public interface PatientClient {
 	String getPatientName(@PathVariable(name="patientId") String patientId);
 	
 	@GetMapping("/patients/{id}")
-	public ResponseEntity<PatientResponseDto> getPatientById(@PathVariable(name="id") String patientId);
+	public ResponseEntity<PatientResponseDto> getPatientById(@PathVariable(name="id") String long1);
 
 }

@@ -16,6 +16,6 @@ public interface DoctorClient {
 	String getDoctorName(@PathVariable(name="doctorId") String doctorId);
 	
 	@GetMapping("/staff/getSpecialization/{doctorId}")
-	String getSpecialization(@PathVariable(name="doctorId") String doctorId);
+	String getSpecialization(@PathVariable(name="doctorId") String long1);
 	 
 }

@@ -2,14 +2,10 @@ package com.flmhospitals.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+
 import com.flmhospitals.Generator.AppointmentEntityListner;
 
-<<<<<<< HEAD
-import com.flmhospitals.utilis.AppointmentIdGenerator;
-
-=======
 import jakarta.persistence.Column;
->>>>>>> 98f57cf2353bb4c0b0b463e200d28a2d0d848e77
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.Id;
@@ -32,33 +28,6 @@ public class Appointment {
 	@Id
 	@Column(name = "appointment_id", nullable = false, unique = true)
 	private String appointmentId;
-<<<<<<< HEAD
-	
-	private Long patientId;
-	
-	private Long doctorId;
-	
-	private LocalDate appointmentDate;
-	
-	private LocalDateTime startTime;
-	
-	private LocalDateTime endTime;
-	
-	private String status;
-	
-	private String notes;
-	
-	@PrePersist
-	public void assignAppointmentId() {
-		if(this.appointmentId==null || this.appointmentId.isEmpty()) {
-			this.appointmentId=AppointmentIdGenerator.generateAppointmentId();
-		}
-	}
-
-} 
-  
-=======
->>>>>>> 98f57cf2353bb4c0b0b463e200d28a2d0d848e77
 
 	private String patientId;
 
@@ -76,9 +45,8 @@ public class Appointment {
 
 	private String reasonForVisit;
 
-	public Appointment(String patientId, String doctorId, LocalDate appointmentDate, LocalTime startTime, LocalTime endTime,
-
-			String status, String notes) {
+	public Appointment(String patientId, String doctorId, LocalDate appointmentDate, LocalTime startTime,
+			LocalTime endTime,String status, String notes) {
 		super();
 		this.patientId = patientId;
 		this.doctorId = doctorId;
@@ -87,5 +55,13 @@ public class Appointment {
 		this.endTime = endTime;
 		this.status = status;
 		this.notes = notes;
+	}	
+		@PrePersist
+		public void assignAppointmentId() {
+			if(this.appointmentId==null || this.appointmentId.isEmpty()) {
+				this.appointmentId=appointmentId;
+			}
+		}
+		
 	}
-}
+
