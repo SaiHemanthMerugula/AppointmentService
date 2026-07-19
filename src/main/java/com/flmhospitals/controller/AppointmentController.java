@@ -89,4 +89,9 @@ public class AppointmentController {
 	public ResponseEntity<AppointmentResponseDTO> generateDietPlan(@PathVariable String appointmentId) {
 		return new ResponseEntity<>(appointmentService.generateDietPlan(appointmentId), HttpStatus.OK);
 	}
+	
+	@GetMapping("/ai")
+	public String generateDietPlanWithAi() {
+		return "Not found";
+	}
 }
