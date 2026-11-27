@@ -21,7 +21,6 @@ import com.flmhospitals.dto.AppointmentRequestDTO;
 import com.flmhospitals.dto.AppointmentResponseDTO;
 import com.flmhospitals.dto.DiagnosisRequestDTO;
 import com.flmhospitals.dto.RescheduleAppointmentDTO;
-import com.flmhospitals.model.Appointment;
 import com.flmhospitals.service.AppointmentService;
 
 @RestController

@@ -49,7 +49,7 @@ public class AiDietPlanServiceImpl implements AiDietPlanService {
             diagnosis.getMedicines()
         );
 
-        return chatModel.call(new Prompt(promptText)).getResult().getOutput().getContent();
+        return chatModel.call(new Prompt(promptText)).getResult().getOutput().getText();
     }
 
     private String formatRole(String specialization) {

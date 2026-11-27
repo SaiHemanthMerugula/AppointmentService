@@ -6,7 +6,6 @@ import com.flmhospitals.dto.AppointmentRequestDTO;
 import com.flmhospitals.dto.AppointmentResponseDTO;
 import com.flmhospitals.dto.DiagnosisRequestDTO;
 import com.flmhospitals.dto.RescheduleAppointmentDTO;
-import com.flmhospitals.model.Appointment;
 
 public interface AppointmentService {
 
@@ -22,11 +21,15 @@ public interface AppointmentService {
 
 	AppointmentResponseDTO reScheduleAppointment(String appointmentId,RescheduleAppointmentDTO rescheduleAppointmentDTO);
 
-	boolean cancelAppointment(String appointmentId);
+	void cancelAppointment(String appointmentId);
 	
 	AppointmentResponseDTO getAppointmentDetails(String appointmentId);
 
 	AppointmentResponseDTO submitDiagnosis(String appointmentId, DiagnosisRequestDTO diagnosisRequest);
 	
 	AppointmentResponseDTO generateDietPlan(String appointmentId);
+
+
+
+
 }
