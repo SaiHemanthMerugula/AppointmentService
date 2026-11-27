@@ -3,6 +3,7 @@ package com.flmhospitals.service.impl;
 import java.time.LocalDate;
 import java.util.List;
 
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -130,12 +131,20 @@ public class AppointmentServiceImpl implements AppointmentService {
     @Override
     public List<AppointmentResponseDTO> getAllAppointmentsForAllDoctors(LocalDate dates) {
         List<Appointment> appointments = appointmentRepository.findByAppointmentDate(dates);
+
+        if(appointments.isEmpty()){
+            throw new AppointmentNotFoundException("No appointment found on this date :"+dates);
+        }
         return buildResponseList(appointments);
     }
 
     @Override
     public List<AppointmentResponseDTO> getAllAppointmentsOfDoctor(String doctorId, LocalDate date) {
         List<Appointment> appointments = appointmentRepository.findByDoctorIdAndAppointmentDate(doctorId, date);
+
+        if(appointments.isEmpty()){
+            throw new AppointmentNotFoundException("No appointments found with doctor id :"+doctorId +" "+"and date :"+date);
+        }
         return buildResponseList(appointments);
     }
 
